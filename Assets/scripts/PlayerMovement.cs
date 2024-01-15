@@ -15,16 +15,12 @@ public class PlayerMovement : MonoBehaviour
     private float checkCooldown = 0.2f; 
     private float timeSinceLastCheck = 0f;
 
-    private Rigidbody playerRigidbody;
+     [SerializeField] private Rigidbody playerRigidbody;
     private Vector3 origin;
 
     [SerializeField]
     private bool airborne = false;
 
-    private void Awake()
-    {
-        playerRigidbody = GetComponent<Rigidbody>();
-    }
     public void PerformMovement(Vector2 playerinput)
     {
         Vector3 movement = new Vector3(playerinput.x, 0f, playerinput.y) * movementSpeed * Time.fixedDeltaTime;

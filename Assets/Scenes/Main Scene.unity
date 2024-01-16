@@ -681,8 +681,12 @@ PrefabInstance:
       value: Element spawner
       objectReference: {fileID: 0}
     - target: {fileID: 5180056851168322468, guid: 90522101da45fac49ba7b83965df3957, type: 3}
+      propertyPath: Element
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180056851168322468, guid: 90522101da45fac49ba7b83965df3957, type: 3}
       propertyPath: GiveAbility.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5180056851168322468, guid: 90522101da45fac49ba7b83965df3957, type: 3}
       propertyPath: GiveAbility.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

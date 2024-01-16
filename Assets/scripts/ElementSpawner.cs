@@ -5,11 +5,6 @@ using UnityEngine.InputSystem;
 
 public class ElementSpawner : MonoBehaviour
 {
-    public enum Elements
-    {
-        Fire,
-        Water,
-    };
     [SerializeField] private Elements Element;
     [SerializeField] private List<Ability> Abilities = new List<Ability>();
     public UnityEvent<Ability> GiveAbility;
@@ -31,7 +26,7 @@ public class ElementSpawner : MonoBehaviour
         GiveAbility.AddListener(delegate { inputParser.SetAbility(ability); });
         for (int i = 0; i < Abilities.Count; i++)
         {
-            if (Element.ToString() == Abilities[i].Element.ToString())
+            if (Element == Abilities[i].Element)
             {
                 ability = Abilities[i];
                 return;

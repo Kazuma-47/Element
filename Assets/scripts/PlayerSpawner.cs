@@ -7,7 +7,7 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     public static GameObject playerInstance;
 
-    private void Start()
+    private void Awake()
     {
         SpawnPlayer();
     }

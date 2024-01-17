@@ -33,6 +33,7 @@ public class AbilityManager : MonoBehaviour
             Vector3 _direction = castPoint.transform.forward;
 
             _projectile_RigidBody.AddForce(_direction * 15f, ForceMode.VelocityChange);
+            _castElement.GetComponent<AbilityHandler>().ActivateAbility(Abilities[selectedAbility].Element);
 
             Abilities[selectedAbility] = null;
         }

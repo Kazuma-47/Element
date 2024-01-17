@@ -33,7 +33,7 @@ public class ObjectManipulator : MonoBehaviour
         }
         Vector3 currentScale = transform.localScale;
         currentScale.y += growAmount;
-        currentScale.y = Mathf.Min(currentScale.y, 3f);
+        currentScale.y = Mathf.Min(currentScale.y, 5f);
         transform.localScale = currentScale;
     }
 }

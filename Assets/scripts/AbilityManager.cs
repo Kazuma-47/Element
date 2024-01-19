@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AbilityManager : MonoBehaviour
 {
-     public Ability [] Abilities = new Ability[2];
+     public Ability [] Abilities = new Ability[4];
+     public Image [] playerUIElements = new Image[4];
     [SerializeField] private GameObject projectile;
     [SerializeField] private GameObject castPoint;
+   
 
     private int selectedAbility = 0;
 
@@ -17,6 +20,7 @@ public class AbilityManager : MonoBehaviour
             if (Abilities[i] != null)
                 continue;
             Abilities[i] = ability;
+            playerUIElements[i].sprite = ability.Icon;
             Debug.Log(ability.Element + "added");
             return;
         }
@@ -36,6 +40,7 @@ public class AbilityManager : MonoBehaviour
             _castElement.GetComponent<AbilityHandler>().ActivateAbility(Abilities[selectedAbility].Element);
 
             Abilities[selectedAbility] = null;
+            playerUIElements[selectedAbility].sprite = null;
         }
     }
     public void ChangeSelectedAbility(int input)

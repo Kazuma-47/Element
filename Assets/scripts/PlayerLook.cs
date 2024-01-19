@@ -7,7 +7,7 @@ public class PlayerLook : MonoBehaviour
     [Header("Player camera configurations")]
     [SerializeField] private float sensitivity = 100f;
     [SerializeField] private Transform playerBody;
-    [SerializeField] float minViewDistance = 25f;
+    [SerializeField] float minViewDistance = 15f;
 
     private float Rotationx;
 

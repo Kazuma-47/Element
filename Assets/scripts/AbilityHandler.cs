@@ -8,6 +8,7 @@ public class AbilityHandler : MonoBehaviour
     [HideInInspector] private Elements spellElement;
     [SerializeField] private float spellLifetime = 4f;
     [SerializeField] private bool onActive;
+    [SerializeField] private GameObject CreationObject;
     private float timer ;
     public void ActivateAbility(Elements element)
     {
@@ -21,6 +22,12 @@ public class AbilityHandler : MonoBehaviour
                 break;
             case Elements.Water:
                 //show the water element
+                break;
+            case Elements.Grafity:
+                //show the graffity element
+                break;
+            case Elements.Creation:
+                //show the creation element
                 break;
             case Elements.None:
                 //blank bullets to catch errors
@@ -58,7 +65,16 @@ public class AbilityHandler : MonoBehaviour
                     _objectManipulator.GrowObject();
                     Destroy(gameObject);
                     break;
+                case Elements.Grafity:
+                    _objectManipulator.ToggleGraffity();
+                    Destroy(gameObject);
+                    break;
             }
+        }
+        if (spellElement == Elements.Creation)
+        {
+            GameObject _castElement = Instantiate(CreationObject, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 

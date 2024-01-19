@@ -36,6 +36,19 @@ public class ObjectManipulator : MonoBehaviour
         currentScale.y = Mathf.Min(currentScale.y, 5f);
         transform.localScale = currentScale;
     }
+
+    public void ToggleGraffity()
+    {
+        Rigidbody rigidbody = GetComponent<Rigidbody>();
+        if(rigidbody != null)
+        {
+            if (rigidbody.useGravity == true)
+                rigidbody.useGravity = false;
+            else
+                rigidbody.useGravity = true;
+        }
+        
+    }
 }
 
 

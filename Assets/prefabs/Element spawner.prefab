@@ -58,10 +58,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2e652af9714164bb6bb99a4f2f5cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Element: 0
+  Element: 2
   Abilities:
   - {fileID: 11400000, guid: a91de8bdb73181e4a820c2e9591fccea, type: 2}
   - {fileID: 11400000, guid: ab9f0cd8585682e4198b9c95d2f91b5a, type: 2}
+  - {fileID: 11400000, guid: 9d255cb087497e3438ab0575146f4178, type: 2}
+  - {fileID: 11400000, guid: e37d523944b0966459e9064e4023ceb5, type: 2}
+  GiveAbility:
+    m_PersistentCalls:
+      m_Calls: []
+  ability: {fileID: 0}
   OnPlayerInRange: 0
 --- !u!1 &3836773268341680031
 GameObject:

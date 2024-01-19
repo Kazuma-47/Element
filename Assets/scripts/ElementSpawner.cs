@@ -7,7 +7,7 @@ public class ElementSpawner : MonoBehaviour
 {
     [SerializeField] private Elements Element;
     [SerializeField] private List<Ability> Abilities = new List<Ability>();
-    public UnityEvent<Ability> GiveAbility;
+    [HideInInspector] public UnityEvent<Ability> GiveAbility;
 
     public Ability ability;
     public  bool OnPlayerInRange;

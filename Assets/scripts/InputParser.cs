@@ -23,6 +23,8 @@ public class InputParser : MonoBehaviour
         controls.Player.Jump.performed += (InputAction.CallbackContext context) => movement.PerformJump();
         controls.Player.Skill1.performed += (InputAction.CallbackContext context) => abilityManager.ChangeSelectedAbility(0);
         controls.Player.Skill2.performed += (InputAction.CallbackContext context) => abilityManager.ChangeSelectedAbility(1);
+        controls.Player.Skill3.performed += (InputAction.CallbackContext context) => abilityManager.ChangeSelectedAbility(2);
+        controls.Player.Skill4.performed += (InputAction.CallbackContext context) => abilityManager.ChangeSelectedAbility(3);
         controls.Player.UseAbility.performed += (InputAction.CallbackContext context) => abilityManager.UseAbility();
         controls.Player.Turn.performed += ctx => playerLook.OnTurn(ctx.ReadValue<Vector2>());
     } 

@@ -10,13 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("GrounCheck Configuration")]
     [SerializeField] private float rayCastLength = 1f;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Vector3 originOffSet;
 
-    private float checkCooldown = 0.2f; 
+    private float checkCooldown = 0.3f; 
     private float timeSinceLastCheck = 0f;
 
      [SerializeField] private Rigidbody playerRigidbody;
-    private Vector3 origin;
+    public GameObject origin;
 
     [SerializeField]
     private bool airborne = false;
@@ -36,8 +35,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //A timer to stop the check from happening instantly
-        origin = gameObject.transform.position + originOffSet;
         timeSinceLastCheck += Time.fixedDeltaTime;
         if (timeSinceLastCheck >= checkCooldown)
         {
@@ -48,11 +45,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void GroundCheck()
     {
-        if (Physics.Raycast(origin, Vector3.down, rayCastLength, groundLayer))
+        if (Physics.Raycast(origin.transform.position, Vector3.down, rayCastLength, groundLayer))
             airborne = false;
         else
             airborne = true;
-        Debug.DrawRay(origin, Vector3.down * rayCastLength, airborne ? Color.red : Color.green);
+        Debug.DrawRay(origin.transform.position, Vector3.down * rayCastLength, airborne ? Color.red : Color.green);
     }
 
    

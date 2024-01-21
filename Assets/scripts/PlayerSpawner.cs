@@ -15,7 +15,7 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (playerPrefab != null)
         {
-            playerInstance = Instantiate(playerPrefab);
+            playerInstance = Instantiate(playerPrefab , gameObject.transform);
         }
     }
 }

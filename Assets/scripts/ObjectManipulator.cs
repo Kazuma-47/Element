@@ -27,13 +27,13 @@ public class ObjectManipulator : MonoBehaviour
     }
     public void GrowObject()
     {
-        if (transform.localScale.y == 3f)
+        if (transform.localScale.y == 10f)
         {
             Debug.Log("Object can grow anymore");
         }
         Vector3 currentScale = transform.localScale;
         currentScale.y += growAmount;
-        currentScale.y = Mathf.Min(currentScale.y, 5f);
+        currentScale.y = Mathf.Min(currentScale.y, 10f);
         transform.localScale = currentScale;
     }
 

@@ -10,6 +10,7 @@ public class AbilityHandler : MonoBehaviour
     [SerializeField] private bool onActive;
     [SerializeField] private GameObject CreationObject;
     private float timer ;
+    private bool hasCollided = false;
     public void ActivateAbility(Elements element)
     {
         timer = spellLifetime;
@@ -51,30 +52,34 @@ public class AbilityHandler : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        // checks if the object is a manipulatable and if so calls a function that will effect it
-        ObjectManipulator _objectManipulator = collision.gameObject.GetComponent<ObjectManipulator>();
-        if(_objectManipulator != null)
+        if (!hasCollided)
         {
-            switch (spellElement)
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>(), true);
+            hasCollided = true;
+            ObjectManipulator _objectManipulator = collision.gameObject.GetComponent<ObjectManipulator>();
+            if (_objectManipulator != null)
             {
-                case Elements.Fire:
-                    _objectManipulator.DamageObject();
-                    Destroy(gameObject);
-                    break;
-                case Elements.Water:
-                    _objectManipulator.GrowObject();
-                    Destroy(gameObject);
-                    break;
-                case Elements.Grafity:
-                    _objectManipulator.ToggleGraffity();
-                    Destroy(gameObject);
-                    break;
+                switch (spellElement)
+                {
+                    case Elements.Fire:
+                        _objectManipulator.DamageObject();
+                        Destroy(gameObject);
+                        break;
+                    case Elements.Water:
+                        _objectManipulator.GrowObject();
+                        Destroy(gameObject);
+                        break;
+                    case Elements.Grafity:
+                        _objectManipulator.ToggleGraffity();
+                        Destroy(gameObject);
+                        break;
+                }
             }
-        }
-        if (spellElement == Elements.Creation)
-        {
-            GameObject _castElement = Instantiate(CreationObject, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (spellElement == Elements.Creation)
+            {
+                GameObject _castElement = Instantiate(CreationObject, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
         }
     }
 

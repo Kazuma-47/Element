@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   Element: 1
+  Icon: {fileID: 21300000, guid: 9af1a6a6ae4b1414c98a4687fcca7885, type: 3}

@@ -9,19 +9,21 @@ public class ElementSpawner : MonoBehaviour
     [SerializeField] private List<Ability> Abilities = new List<Ability>();
     [HideInInspector] public UnityEvent<Ability> GiveAbility;
 
+
     public Ability ability;
     public  bool OnPlayerInRange;
 
     private GameObject playerInstance;
     private PlayerInput controls;
     private InputParser inputParser;
-    
+    private PlayerUiHandler uiManager;
 
     //configure Spawner
     private void Start()
     {
         playerInstance = PlayerSpawner.playerInstance;
         inputParser = playerInstance.GetComponent<InputParser>();
+        uiManager = playerInstance.GetComponent<PlayerUiHandler>();
         controls = inputParser.controls;
         GiveAbility.AddListener(delegate { inputParser.SetAbility(ability); });
         for (int i = 0; i < Abilities.Count; i++)
@@ -42,7 +44,6 @@ public class ElementSpawner : MonoBehaviour
     {
         if (OnPlayerInRange)
         {
-            Debug.Log("button pressed");
              GiveAbility.Invoke(ability);
         }
     }
@@ -52,6 +53,7 @@ public class ElementSpawner : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             OnPlayerInRange = true;
+            uiManager.ToggleInterActionPrompt(true);
             controls.Player.Interact.performed += ctx => UseSpawner();
         }
     }
@@ -59,6 +61,7 @@ public class ElementSpawner : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            uiManager.ToggleInterActionPrompt(false);
             OnPlayerInRange = false;
         }
     }

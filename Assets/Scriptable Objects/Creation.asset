@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2348a3c1a76c4b04380fd4620d5d2ad9, type: 3}
   m_Name: Creation
   m_EditorClassIdentifier: 
-  Element: 0
-  Icon: {fileID: 0}
+  Element: 3
+  Icon: {fileID: 21300000, guid: 016cc2d819b6cf94eaed7676a8693d7e, type: 3}

@@ -22,9 +22,11 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    public void SwitchScene(string sceneName)
+    public void SwitchToNextScene()
     {
-        SceneManager.LoadScene(sceneName);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
 

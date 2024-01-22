@@ -881,6 +881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionObjective: {fileID: 5795275146318112375}
+  missionName: {fileID: 3871737986414292206}
   interactionPrompt: {fileID: 508211922158079606}
 --- !u!54 &1366161653710439884
 Rigidbody:
@@ -1740,8 +1741,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 109.2, y: -18.9986}
-  m_SizeDelta: {x: 195.6973, y: 37.9971}
+  m_AnchoredPosition: {x: 219.32, y: -18.9986}
+  m_SizeDelta: {x: 415.94, y: 37.9971}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4532421078416322228
 CanvasRenderer:

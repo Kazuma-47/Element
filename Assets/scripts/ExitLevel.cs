@@ -6,7 +6,17 @@ public class ExitLevel : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneSwitcher.Instance.SwitchScene("Level1");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneSwitcher.Instance.SwitchToNextScene();
+        }
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            SceneSwitcher.Instance.SwitchToNextScene();
+        }
     }
 }
 

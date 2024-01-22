@@ -9,6 +9,7 @@ public class TutorialQuest : MonoBehaviour
     void Start()
     {
         playerObjective = PlayerSpawner.playerInstance.GetComponent<PlayerUiHandler>();
+        playerObjective.SetMissionName("Tutorial");
         Quest1();
     }
     

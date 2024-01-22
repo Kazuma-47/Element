@@ -43,9 +43,15 @@ public class ObjectManipulator : MonoBehaviour
         if(rigidbody != null)
         {
             if (rigidbody.useGravity == true)
+            {
                 rigidbody.useGravity = false;
+                rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            }
             else
+            {
                 rigidbody.useGravity = true;
+                rigidbody.constraints = RigidbodyConstraints.None;
+            }
         }
         
     }

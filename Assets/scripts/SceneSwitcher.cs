@@ -28,5 +28,9 @@ public class SceneSwitcher : MonoBehaviour
         int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(nextSceneIndex);
     }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
 

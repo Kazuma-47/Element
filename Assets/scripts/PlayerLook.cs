@@ -12,6 +12,7 @@ public class PlayerLook : MonoBehaviour
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
     public void OnTurn(Vector2 input)
     {

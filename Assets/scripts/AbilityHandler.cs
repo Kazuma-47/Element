@@ -80,6 +80,11 @@ public class AbilityHandler : MonoBehaviour
                 GameObject _castElement = Instantiate(CreationObject, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
+            else
+            {
+                Destroy(gameObject);
+            }
+                
         }
     }
 

@@ -2,7 +2,12 @@ using UnityEngine;
 
 public class EndingMenu : MonoBehaviour
 {
-   public void BackToMenu()
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+    public void BackToMenu()
     {
         SceneSwitcher.Instance.BackToMenu();
     }
